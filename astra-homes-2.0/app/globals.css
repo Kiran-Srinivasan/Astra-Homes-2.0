@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------
+   Astra Homes Global Theme  —  Turbopack Safe
+--------------------------------------------- */
+@layer base {
+  body {
+    @apply bg-beige text-charcoal font-body antialiased;
+  }
+
+  a {
+    color: theme('colors.gold.DEFAULT');
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    @apply bg-charcoal text-beige py-6 text-center;
+  }
+}
+
+/* --------------------------------------------
+   Typography & Components
+--------------------------------------------- */
+@layer components {
+  h1 {
+    @apply text-4xl font-bold font-heading text-charcoal;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold font-heading text-charcoal;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold font-heading text-charcoal;
+  }
+
+  /* Button */
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold to-gold-light text-white px-5 py-2 rounded-lg font-semibold shadow-md transition-transform;
+  }
+
+  /* Section and card without responsive apply */
+  .section {
+    @apply py-16 px-4 max-w-7xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 transition-shadow;
+  }
+}
+
+/* --------------------------------------------
+   Manual responsive rules (no @apply md:)
+--------------------------------------------- */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  /* ~text-5xl */
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  /* ~text-4xl */
+  h3 {
+    font-size: 1.875rem;
+  }
+
+  /* ~text-3xl */
+  .section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* --------------------------------------------
+   Plain CSS hover states
+--------------------------------------------- */
+.btn-gold:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+.card:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s ease-out;
+}
