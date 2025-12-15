@@ -1,4 +1,5 @@
 import React from 'react';
+"use client";
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
