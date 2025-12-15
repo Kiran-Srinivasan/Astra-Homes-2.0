@@ -1,11 +1,7 @@
-import React from 'react';
-"use client";
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
-export default function PropertyDetailPage() {
-    const { slug } = useParams();
-
+export default function PropertyDetailPage({ params }: { params: { slug: string } }) {
+    const { slug } = params;
     // Mock property data (you’ll replace with backend or CMS later)
     const properties = [
         {
