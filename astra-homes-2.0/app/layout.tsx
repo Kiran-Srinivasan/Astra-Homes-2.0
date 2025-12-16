@@ -2,6 +2,7 @@ import "./globals.css";
 import React, { ReactNode } from "react";
 import Link from "next/link";
 import Navbar from './component/Navbar';
+import Footer from './component/Footer';
 
 export const metadata = {
   title: 'Astra Homes | Interior Design, Construction & Properties for Sale',
@@ -34,27 +35,34 @@ export const metadata = {
     images: ['/images/home-hero.jpg'],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo-vertical.png', // Using the vertical logo as the favicon/icon
   },
 };
 
 
+import { Outfit, Open_Sans } from "next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: '--font-outfit'
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: '--font-opensans'
+});
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-beige text-charcoal font-body">
+      <body className={`${outfit.variable} ${openSans.variable} bg-beige text-charcoal font-body`}>
         {/* ---------- Header / Navbar ---------- */}
         <Navbar />
         {/* ---------- Page Content ---------- */}
         <main className="min-h-[80vh]">{children}</main>
 
         {/* ---------- Footer ---------- */}
-        <footer>
-          <p>© {new Date().getFullYear()} Astra Homes. All rights reserved.</p>
-          <p className="text-sm mt-2">
-            Design | Build | Live – crafted with <span className="text-gold"> excellence</span>.
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

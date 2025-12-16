@@ -16,8 +16,8 @@ module.exports = {
         beige: '#FAF7F0',
       },
       fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Open Sans', 'sans-serif'],
+        heading: ['var(--font-outfit)', 'sans-serif'],
+        body: ['var(--font-opensans)', 'sans-serif'],
       },
     },
   },
